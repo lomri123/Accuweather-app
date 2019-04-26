@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.city-list {
+  cursor: pointer;
+}
+
+.basic-single {
+  background: white;
+}
