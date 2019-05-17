@@ -1,14 +1,13 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Select from "react-select";
 
 export default class SingleSelect extends Component {
   render() {
     return (
-      <Fragment>
+      <div className="basic-single col-4 m-4 mx-auto search-bar">
         <Select
-          className="basic-single col-4 mx-auto"
           classNamePrefix="select"
-          defaultValue={this.props.locations[0]}
+          placeholder="Search a city..."
           isSearchable="true"
           name="cities"
           options={this.props.locations}
@@ -16,7 +15,7 @@ export default class SingleSelect extends Component {
             this.props.handleOnChange(selectedOption.label, selectedOption.code)
           }
         />
-      </Fragment>
+      </div>
     );
   }
 }
