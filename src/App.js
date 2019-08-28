@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
-import SingleSelect from "./components/searchRS";
+import DropdownSelect from "./components/DropdownSelect";
 import { WeatherStrip } from "./components/weatherDaily";
 
 class App extends Component {
@@ -58,7 +58,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="m-5">Weather Forcast</h1>
-        <SingleSelect
+        <DropdownSelect
           locations={this.state.locationsApi}
           handleOnChange={this.handleOnChange}
         />
