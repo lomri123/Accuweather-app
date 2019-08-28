@@ -15,7 +15,6 @@ export const SingleDayWeather = ({
     <div
       className={`single-day ${selectedDay === dayIndex ? "selected" : ""}`}
       onClick={handleDaySelection}
-      key={dayKey}
     >
       <div className="flex-row bd-highlight m-2 ">
         <h6>

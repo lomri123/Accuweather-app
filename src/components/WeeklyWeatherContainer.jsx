@@ -36,7 +36,7 @@ export const WeeklyWeatherContainer = ({
           <SingleDayWeather
             selectedDay={selectedDay}
             dayIndex={index}
-            dayKey={day.EpochDate}
+            key={day.EpochDate}
             dayDate={day.Date}
             dayIcon={day.Day.Icon}
             dayMaxTemp={day.Temperature.Maximum.Value}
