@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Select from "react-select";
 
-export default class SingleSelect extends Component {
+export default class DropdownSelect extends Component {
   render() {
     return (
       <div className="basic-single col-4 m-4 mx-auto search-bar">
