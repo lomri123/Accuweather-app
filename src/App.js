@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import DropdownSelect from "./components/DropdownSelect";
-import { WeatherStrip } from "./components/weatherDaily";
+import { WeeklyWeatherContainer } from "./components/WeeklyWeatherContainer";
 
 class App extends Component {
   constructor() {
@@ -64,7 +64,7 @@ class App extends Component {
         />
 
         {Object.keys(this.state.weatherForcast).length === 0 ? null : (
-          <WeatherStrip
+          <WeeklyWeatherContainer
             handleDaySelection={this.handleDaySelection}
             selectedDay={this.state.selectedDay}
             selectedCity={this.state.selectedCity}

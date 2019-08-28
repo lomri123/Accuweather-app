@@ -1,7 +1,8 @@
 import React from "react";
+import { SingleDayWeather } from "./SingleDayWeather";
 import Moment from "react-moment";
 
-export const WeatherStrip = ({
+export const WeeklyWeatherContainer = ({
   weatherData,
   selectedCity,
   selectedDay,
@@ -32,26 +33,16 @@ export const WeatherStrip = ({
 
       <div className="d-flex p-2 bd-highlight justify-content-center bottom-weather">
         {weatherData.map((day, index) => (
-          <div
-            className={`single-day ${selectedDay === index ? "selected" : ""}`}
-            onClick={() => handleDaySelection(index)}
-            key={day.EpochDate}
-          >
-            <div className="flex-row bd-highlight m-2 ">
-              <h6>
-                <Moment format="ddd">{day.Date}</Moment>
-              </h6>
-              <img
-                className="small-image"
-                src={`https://developer.accuweather.com/sites/default/files/${
-                  day.Day.Icon >= 10 ? day.Day.Icon : "0" + day.Day.Icon
-                }-s.png`}
-                alt="weather-icon"
-              />
-              <h6>{`${day.Temperature.Maximum.Value}°F`}</h6>
-              <h6>{`${day.Temperature.Minimum.Value}°F`}</h6>
-            </div>
-          </div>
+          <SingleDayWeather
+            selectedDay={selectedDay}
+            dayIndex={index}
+            dayKey={day.EpochDate}
+            dayDate={day.Date}
+            dayIcon={day.Day.Icon}
+            dayMaxTemp={day.Temperature.Maximum.Value}
+            dayMinTemp={day.Temperature.Minimum.Value}
+            handleDaySelection={() => handleDaySelection(index)}
+          />
         ))}
       </div>
     </div>
